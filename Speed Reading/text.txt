@@ -1,0 +1,21 @@
+from time import sleep
+
+def symbolstrip(text):
+    for i in ['"',"'",'/','(',')',',','.',';',':','!','#','$','*','?']:
+        if i in text:
+            text = text.replace(i," ")
+    return text
+words=[]
+text=raw_input("Insert text\n")
+secs=input("Time in s\n")
+text=symbolstrip(text).split(' ')
+for i in text:
+    if i!='':
+        words.append(i)
+
+for i in words:
+    print i
+    sleep(secs)
+
+
+
