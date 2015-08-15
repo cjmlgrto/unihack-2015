@@ -5,9 +5,8 @@
 <body>
   <header>
     <h1>Notes</h1>
-    <form class="new-note">
-      <input type="text" name="text" placeholder="Enter a new note" />
-    </form>
+    <textarea id="new-note"></textarea>
+    <p class="create-new-note">Create</p>
   </header>
   
   <ul>
@@ -20,8 +19,7 @@
 
 <template name="note">
   <li>
-    <form class="edit-note">
-      <input type="text" name="text" placeholder="{{text}}"/>
-    </form>
+    <textarea>{{text}}</textarea>
+    <p class="edit-note">Submit changes</p>
   </li>
 </template>

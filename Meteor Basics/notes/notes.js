@@ -9,14 +9,19 @@ if (Meteor.isClient) {
   });
   
   Template.body.events({
-    "submit .new-note": function(event) {
-      event.preventDefault();
-      var text = event.target.text.value;
+    "click .create-new-note": function() {
+      var text = document.getElementById('new-note').value;
       Notes.insert({
         text: text,
         created: new Date()
       });
-      event.target.text.value = "";
+      text = "";
+    }
+  });
+  
+  Template.note.events({
+    "click .edit-note": function() {
+      
     }
   });
   
