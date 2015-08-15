@@ -2,24 +2,35 @@
   <title>Notes</title>
 </head>
 
+<!-- INTERFACE -->
+
 <body>
   <header>
-    <h1>Notes</h1>
-    <textarea id="new-note"></textarea>
-    <p class="create-new-note">Create</p>
+    <button id="create-note">Create Note</button>
   </header>
   
-  <ul>
-    {{#each notes}}
-      {{> note}}
+  <section id="note_list">
+    <ul>
+    {{#each note_items}}
+      {{> note_item}}
     {{/each}}
-  </ul>
+    </ul>
+  </section>
   
 </body>
 
-<template name="note">
-  <li>
-    <textarea>{{text}}</textarea>
-    <p class="edit-note">Submit changes</p>
+<!-- TEMPLATES -->
+
+<template name="note_item">
+  <li id="{{_id}}" class="note_item">
+    <div class="note_blurb"><strong>Title:</strong> {{text}}</div>
+    <div class="note_date"><strong>Modified:</strong> {{modified}}</div>
+    <div class="actions">
+      <button class="delete">Delete</button>
+      <button class="open">{{#if open}}Close {{else}} Open{{/if}}</button>
+    </div>
+    {{#if open}}
+      <textarea class="editor" id="{{_id}}-open">{{text}}</textarea>
+    {{/if}}
   </li>
 </template>
