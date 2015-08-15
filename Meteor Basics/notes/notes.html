@@ -1,0 +1,27 @@
+<head>
+  <title>Notes</title>
+</head>
+
+<body>
+  <header>
+    <h1>Notes</h1>
+    <form class="new-note">
+      <input type="text" name="text" placeholder="Enter a new note" />
+    </form>
+  </header>
+  
+  <ul>
+    {{#each notes}}
+      {{> note}}
+    {{/each}}
+  </ul>
+  
+</body>
+
+<template name="note">
+  <li>
+    <form class="edit-note">
+      <input type="text" name="text" placeholder="{{text}}"/>
+    </form>
+  </li>
+</template>
