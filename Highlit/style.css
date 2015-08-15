@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-family: Lato;
+}
+
+#toolbar {
+  padding: 20px;
+}
+
+#highlight {
+  padding: 10px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Lato;
+}
+
+#highlight:active {
+  background: #aaa;
+  border: 1px solid #555;
+}
+
+#editor {
+  font-family: Lato;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+p {
+  padding: 20px;
+}
+
+#output {
+  padding: 20px;
+}
+
+span {
+  background: #FFD426;
+}
