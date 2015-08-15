@@ -1,0 +1,39 @@
+<head>
+  <title>Memory Refresher</title>
+</head>
+
+<body>
+  
+  <section id="toolbar">
+    <button class="create-note">New Note</button>
+  </section>
+  
+  <main>
+    <section id="notes_list">
+      <ul>
+      {{#each notes_list}}
+        {{> note_item}}
+      {{/each}}
+      </ul>
+    </section>
+  
+    <section id="editor">
+      {{#each notes_open}}
+        {{> note_open}}
+      {{/each}}
+    </section>
+  </main>
+  
+</body>
+
+<template name="note_item">
+  <li id="{{_id}}-item" class="note_item {{#if open}} opened{{/if}}">
+    <div class="delete">&times;</div>
+    <div class="note_title">{{text}}</div>
+    <div class="note_date">{{date}}</div>
+  </li>
+</template>
+
+<template name="note_open">
+  <textarea id="{{_id}}-open" class="editor">{{text}}</textarea>
+</template>

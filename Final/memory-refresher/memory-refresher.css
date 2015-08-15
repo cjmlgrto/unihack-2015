@@ -1,0 +1,61 @@
+/* CSS declarations go here */
+
+body {
+  font-family: Lato;
+}
+
+main {
+  margin: 15px 0;
+}
+
+#notes_list {
+  width: 25%;
+  float: left;
+  vertical-align: top;
+}
+
+#editor {
+  width: 75%;
+  float: left;
+  vertical-align: top;
+}
+
+#notes_list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#notes_list li {
+  padding: 15px;
+}
+
+#notes_list li:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+.delete {
+  margin-top: 10px;
+  background: #ddd;
+  display: inline-block;
+  padding: 0 6px 2px;
+  border-radius: 12px;
+  float: right;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#notes_list li:hover .delete {
+  opacity: 1;
+}
+
+.opened {
+  background: #999 !important;
+}
+
+.editor {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 15px;
+}
