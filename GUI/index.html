@@ -9,27 +9,20 @@
 
 <body onresize="resize()">
 <script type="text/javascript">
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-
     function resize(){
-		var editpage_r = document.getElementById("page");
-		var sidebar_r = document.getElementById("notes_side");
-		if (sidebar_r.style.width != "0px"){
-			editpage_r.style.marginLeft = '350px';
+		var editpage = document.getElementById("page");
+		var sidebar = document.getElementById("notes_side");
+		if (sidebar.style.width != 0){
+			editpage.style.marginLeft = '350px';
 		}
 
-		else{
+		else {
 			if(window.innerWidth < 700){
-				editpage_r.style.marginLeft = '80px';
+				editpage.style.marginLeft = '80px';
 			}
+		
 			else{
-				editpage_r.style.marginLeft = '250px';
+				editpage.style.marginLeft = '250px';
 			}
 		}
 	}
@@ -50,11 +43,11 @@
     function change(element) {
     	var editpage = document.getElementById("page");
     	var sidebar = document.getElementById("notes_side");
-    	var w=250-(2*16)
+    	var w=218
     	var img = document.getElementById(element);
     	if(imgArray[0].src == img.src){ 
     		document.getElementById(element).src = imgArray[1].src;
-    		sidebar.style.width = w+'px';
+    		sidebar.style.width = 218+'px';
     		editpage.style.marginLeft = '350px';
     	}
     	else{

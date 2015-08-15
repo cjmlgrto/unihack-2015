@@ -87,7 +87,7 @@ a{
 	position: absolute; right: 0px; top: 0px;
 	background-color: #8bbabf;
 	height: 3em;
-	min-width: 150px;
+	width: 150px;
 	-moz-transition: background-color 0.3s ease-in; 
 	-webkit-transition: background-color 0.3s ease-in;
 	-o-transition: background-color 0.3s ease-in;
