@@ -104,6 +104,8 @@ function change3(element3) {
     <div class="toolbar">
       <ul style="list-style-type: none;">
         <li class="inline create-note"><img src="/edit.png"></li>
+        <li class="inline" id='diss' style="display: inline-block" onclick="document.getElementById('usertext').style.display='none'; document.getElementById('diss').style.display='none'; document.getElementById('app').style.display='inline-block';document.getElementById('cards').style.display='inline-block'"><img src="cards.png"></li>
+        <li class="inline" id='app' style="display: none;" onclick="document.getElementById('usertext').style.display='inline-block'; document.getElementById('diss').style.display='inline-block'; document.getElementById('app').style.display='none';document.getElementById('cards').style.display='none'"><img src="cards.png"></li>
       </ul>
     </div>
   	<div class="settings" onmouseover="javascript:change3('arr3')" onmouseout="javascript:change3('arr3')">
@@ -141,10 +143,23 @@ function change3(element3) {
 
 <template name="note_item">
   <li class="note_items">
+    <div class="delete">&times;</div>
     {{text}}
   </li>
 </template>
 
 <template name="note_open">
-  <textarea id="{{_id}}-open" class="open-note-editor" rows="20">{{text}}</textarea>
+	<ul class="flashcards" id="cards" style="display: none;">
+		<a href=""><li>Week 1</li></a>
+		<a href=""><li>Week 2</li></a>
+		<a href=""><li>Week 3</li></a>
+		<a href=""><li>Week 4</li></a>
+		<a href=""><li>Week 5</li></a>
+		<a href=""><li>Week 6</li></a>
+		<a href=""><li>Week 7</li></a>
+		<a href=""><li>Week 8</li></a>
+	</ul>
+  <div id="usertext">
+    <textarea id="{{_id}}-open" class="open-note-editor" rows="20">{{text}}</textarea>
+  </div>
 </template>
