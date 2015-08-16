@@ -27,7 +27,7 @@
 </body>
 
 <template name="note_item">
-  <li id="{{_id}}-item" class="note_item {{#if open}} opened{{/if}}">
+  <li id="{{_id}}-item" class="note_item {{#if open}} opened{{/if}} {{tag}}">
     <div class="delete">&times;</div>
     <div class="note_title">{{text}}</div>
     <div class="note_date">{{date}}</div>
@@ -35,5 +35,7 @@
 </template>
 
 <template name="note_open">
-  <textarea id="{{_id}}-open" class="editor">{{text}}</textarea>
+  <button class="add-yo">Add to Flash</button>
+  <textarea id="{{_id}}-open" class="editor" rows="20">{{text}}</textarea>
+  Category: <input type="text" id="{{_id}}-tagger" class="tags" placeholder="{{tag}}"/>
 </template>
