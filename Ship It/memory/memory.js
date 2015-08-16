@@ -2,8 +2,6 @@ Notes = new Mongo.Collection("notes")
 
 var date_raw = new Date();
 var current_date = date_raw.toUTCString();
-var selected = "";
-var temp = "";
 
 if (Meteor.isClient) {
   
@@ -13,45 +11,32 @@ if (Meteor.isClient) {
     },
     notes_open: function() {
       return Notes.find({open: true});
-    },
-    flash_cards: function() {
-      return Notes.find({});
     }
   });
   
   Template.body.events({
     "click .create-note": function() {
       Notes.insert({
-        text: "Edit this note",
+        text: "New note",
         date: current_date
-      })
+      });
     }
   });
   
   Template.note_item.events({
-    "click .delete": function() {
-      Notes.remove(this._id);
-    },
-    "click .note_item": function() {
-      // enable notifications
+    "click .note_items": function() {
       if (Notification.permission !== "granted") {
         Notification.requestPermission();
       } else {
         console.log("Notifications enabled!")
       }
-      
-      // close all other notes
-      Meteor.call("openall"); 
-      
-      // onclick, open the note
+      Meteor.call("closeAll");
       Notes.update(
         this._id,
         {
           $set: {open: true}
         }
       );
-      
-      // show the notification x seconds after modification
       var data_text = this.text
       setInterval(function(){
         var notification = new Notification("Time for a Memory Refresh!", {
@@ -62,11 +47,14 @@ if (Meteor.isClient) {
           window.open("")
         }
       }, 5000);
+    },
+    "click .delete": function() {
+      Notes.remove(this._id);
     }
   });
   
   Template.note_open.events({
-    "blur .editor": function() {
+    "blur .open-note-editor": function() {
       var id = this._id + "-open"
       var text = document.getElementById(id).value
       Notes.update(
@@ -82,9 +70,7 @@ if (Meteor.isClient) {
           $set: {open: true}
         }
       );
-      
     },
-    
     "blur .tags": function() {
       var id = this._id + "-tagger"
       var tag = document.getElementById(id).value
@@ -103,32 +89,7 @@ if (Meteor.isClient) {
           $set: {open: true}
         }
       );
-    },
-    
-    "mouseup .editor": function() {
-     
-      if (window.getSelection) {
-        selected = window.getSelection().toString();
-      } 
-      
-    },
-    
-    "click .add-yo": function() {
-      
-      temp = selected + "|" + temp
-      
-      Notes.update(
-        this._id,
-        {
-          $set: {flashcard: temp}
-        }
-      );
-      
     }
-  });
-  
-  Template.flash_card.helpers({
-
   });
   
 }
@@ -138,7 +99,7 @@ if (Meteor.isServer) {
   Meteor.startup(function() {
     return Meteor.methods({
       
-      openall: function() {
+      closeAll: function() {
         return Notes.update(
           {},
           {
@@ -151,4 +112,3 @@ if (Meteor.isServer) {
   });
 
 }
-
