@@ -103,6 +103,7 @@ function change3(element3) {
   	</div>
     <div class="toolbar">
       <ul style="list-style-type: none;">
+        <li class="inline speedread"><img src="lines.png"></li>
         <li class="inline create-note"><img src="/edit.png"></li>
         <li class="inline" id='diss' style="display: inline-block" onclick="document.getElementById('usertext').style.display='none'; document.getElementById('diss').style.display='none'; document.getElementById('app').style.display='inline-block';document.getElementById('cards').style.display='inline-block'"><img src="cards.png"></li>
         <li class="inline" id='app' style="display: none;" onclick="document.getElementById('usertext').style.display='inline-block'; document.getElementById('diss').style.display='inline-block'; document.getElementById('app').style.display='none';document.getElementById('cards').style.display='none'"><img src="cards.png"></li>
@@ -139,6 +140,12 @@ function change3(element3) {
     </ul>
   </div>
   
+  <div class="speeder" id="the_box">
+    {{#each speed_note}}
+      {{> speed_athon}}
+    {{/each}}
+  </div>
+  
 </body>
 
 <template name="note_item">
@@ -162,4 +169,8 @@ function change3(element3) {
   <div id="usertext">
     <textarea id="{{_id}}-open" class="open-note-editor" rows="20">{{text}}</textarea>
   </div>
+</template>
+
+<template name="speed_athon">
+  <p>{{text}}</p>
 </template>

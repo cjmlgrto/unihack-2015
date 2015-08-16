@@ -11,6 +11,9 @@ if (Meteor.isClient) {
     },
     notes_open: function() {
       return Notes.find({open: true});
+    },
+    speed_note: function() {
+      return Notes.find({open: true});
     }
   });
   
@@ -20,6 +23,10 @@ if (Meteor.isClient) {
         text: "New note",
         date: current_date
       });
+    },
+    "click .speedread": function() {
+      var the_box = document.getElementById("the_box");
+      the_box.style.display = "block";
     }
   });
   
