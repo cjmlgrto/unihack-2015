@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="style.css"/>
-	<title>ThatApp</title>
+	<title>ThisApp</title>
 	<script type="text/javascript" src="scripts.js"></script>
 </head>
 
@@ -27,6 +27,8 @@
 			<a href=""><li class="inline"><img src="edit.png"></li></a>
 			<a href=""><li class="inline"><img src="lines.png"></li></a>
 			<a href=""><li class="inline"><img src="play.png"></li></a>
+			<li class="inline" id='diss' style="display: inline-block" onclick="document.getElementById('usertext').style.display='none'; document.getElementById('diss').style.display='none'; document.getElementById('app').style.display='inline-block';document.getElementById('cards').style.display='inline-block'"><img src="cards.png"></li></a>
+			<li class="inline" id='app' style="display: none;"onclick="document.getElementById('usertext').style.display='inline-block'; document.getElementById('diss').style.display='inline-block'; document.getElementById('app').style.display='none';document.getElementById('cards').style.display='none'"><img src="cards.png"></li></a>
 		</ul>
 	</div>
 
@@ -43,7 +45,17 @@
 </div>
 
 <div class="editor" id='page'>
-	<p>
+	<ul class="flashcards" id="cards" style="display: none;">
+		<a href=""><li>Week 1</li></a>
+		<a href=""><li>Week 2</li></a>
+		<a href=""><li>Week 3</li></a>
+		<a href=""><li>Week 4</li></a>
+		<a href=""><li>Week 5</li></a>
+		<a href=""><li>Week 6</li></a>
+		<a href=""><li>Week 7</li></a>
+		<a href=""><li>Week 8</li></a>
+	</ul>
+	<p id="usertext">
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum ultricies sapien vel pellentesque. Vivamus pretium nibh id enim auctor, sit amet blandit elit semper. Etiam a massa lorem. In ac urna dictum, luctus metus at, semper lectus. In condimentum leo at sem blandit faucibus. Vestibulum eu bibendum sapien. Curabitur non odio eget lacus sodales pellentesque. Ut et nisi pretium, convallis lectus sed, maximus sapien. Aenean volutpat a enim ac mattis. Suspendisse mattis sagittis mi, nec dignissim libero scelerisque quis. Suspendisse porta in massa vitae tristique. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec eget purus felis. Vivamus ac imperdiet enim. Donec dapibus pellentesque est quis imperdiet.
 	<br><br>
 	Phasellus gravida eros sapien, ac faucibus ligula dapibus eu. Donec neque ante, accumsan iaculis nulla vitae, lobortis porttitor ex. Cras nec porta nisl. Pellentesque iaculis magna rhoncus ex auctor, commodo tempus dui consequat. Duis quis nibh pretium, mattis diam non, eleifend sem. Duis viverra arcu quis lacus laoreet efficitur. Nulla et scelerisque dui, vitae viverra lorem. Vivamus ut laoreet justo, quis tristique augue. Quisque accumsan dapibus felis, non sodales sapien luctus nec. Nunc ullamcorper pretium ornare. Donec ac finibus felis, non scelerisque purus. Donec luctus maximus nulla, non posuere neque. Proin vitae purus nibh. Praesent ut vulputate sapien. Cras volutpat est nec sapien semper ultrices.
