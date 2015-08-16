@@ -1,5 +1,4 @@
 <body>
-	<p id='flash'></p>
 	<script type="text/javascript">
 	var delay=1000;
 	function strip(text){
@@ -22,10 +21,16 @@
 	}
 
 	var text = prompt("Insert text");
-	
-	document.getElementById("flash").innerHTML = strip(text);	
-
-
 	</script>
-	
+
+	<p id='flash'></p>
+	<script  type="text/javascript">
+	for (i=4; i>0; i--){
+		document.getElementById("flash").innerHTML = i;
+		console.log(i);
+		setTimeout(1000);
+	}
+
+	document.getElementById("flash").innerHTML = strip(text);	
+	</script>
 </body>
