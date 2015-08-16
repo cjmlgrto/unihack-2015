@@ -53,7 +53,7 @@ if (Meteor.isClient) {
       
       // show the notification x seconds after modification
       var data_text = this.text
-      setInterval(function(){
+      dsetInterval(function(){
         var notification = new Notification("Time for a Memory Refresh!", {
           icon: "",
           body: data_text
